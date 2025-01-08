@@ -1,0 +1,20 @@
+.graph-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 10px;
+}
+
+.bar {
+    transition: all 0.3s ease;
+}
+
+.x-axis text, .y-axis text {
+    font-size: 14px;
+    fill: #333;
+}
+
+.x-axis path, .y-axis path {
+    stroke: #333;
+}

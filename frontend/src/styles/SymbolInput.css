@@ -1,0 +1,55 @@
+.symbol-input-container {
+    background-color: #1f2937; /* Dark background */
+    color: #f3f4f6; /* Light text color for contrast */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.symbol-input-title {
+    color: #d1d5db; /* Light gray for title */
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.symbol-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.symbol-input {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #4a5568; /* Light border for input */
+    background-color: #2d3748; /* Dark background for input */
+    color: #f3f4f6; /* Light text color */
+    font-size: 1rem;
+}
+
+.symbol-input::placeholder {
+    color: #a0aec0; /* Lighter placeholder text */
+}
+
+.symbol-submit-btn {
+    background-color: #4a90e2; /* Light blue background */
+    color: #f3f4f6; /* Light text color */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+.symbol-submit-btn:hover {
+    background-color: #357ABD; /* Darker blue on hover */
+}
+
+.symbol-submit-btn:focus {
+    outline: none; /* Remove focus outline */
+    border: 2px solid #4a90e2; /* Add blue border on focus */
+}

@@ -1,0 +1,72 @@
+.order-book-container {
+    background-color: #1f2937; /* Dark background */
+    color: #f3f4f6; /* Light text color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.order-book-title {
+    color: #d1d5db; /* Light gray for title */
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.order-book-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.order-book-table th,
+.order-book-table td {
+    padding: 12px;
+    border: 1px solid #4a5568; /* Light border for table cells */
+}
+
+.order-book-table th {
+    background-color: #2d3748; /* Dark header background */
+    color: #f3f4f6; /* Light text for header */
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.order-book-table td {
+    background-color: #2a2f3b; /* Dark background for table rows */
+    color: #f3f4f6; /* Light text color */
+    font-size: 1rem;
+}
+
+.order-book-table tr:nth-child(even) td {
+    background-color: #333c49; /* Slightly lighter background for even rows */
+}
+
+.order-book-table tr:hover td {
+    background-color: #4a5568; /* Highlight row on hover */
+    cursor: pointer;
+}
+
+.go-back-button {
+    background-color: #4a90e2; /* Light blue background */
+    color: #f3f4f6; /* Light text color */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.go-back-button:hover {
+    background-color: #357ABD; /* Darker blue on hover */
+}
+
+.go-back-button:focus {
+    outline: none;
+    border: 2px solid #4a90e2; /* Add blue border on focus */
+}
