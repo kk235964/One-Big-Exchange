@@ -29,9 +29,9 @@ const App = () => {
 
         <Route path="/" element={<HomePage />} />
         <Route path='/consolidatedBook' element={<ConsolidatedBook/>} />
-          <Route path="/orders" element={<ProtectedRoutes><OrdersPage /></ProtectedRoutes>} />
+        <Route path="/orders" element={<ProtectedRoutes><OrdersPage /></ProtectedRoutes>} />
         <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+        </Routes>
         {showLogin && (
             <div className="fixed inset-0 z-50 bg-gray-900 bg-opacity-50 flex items-center justify-center">
                 <Login onClose={toggleLoginPopup} />

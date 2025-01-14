@@ -104,7 +104,6 @@ const OrdersPage = () => {
   if (loading) return <div className="text-center text-gray-400">Loading...</div>;
 
   return (
-      localStorage.getItem('token') ? (
           <div className="p-6 bg-gray-900 min-h-screen text-gray-300">
             <h1 className="text-3xl font-bold mb-6 text-white">Orders</h1>
 
@@ -180,6 +179,41 @@ const OrdersPage = () => {
                 </div>
             )}
 
+            {(editModalVisible) && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+                    <div className="bg-gray-800 p-6 rounded-lg shadow-lg w-96 text-white">
+                        <h2 className="text-xl font-semibold mb-4">Edit Order</h2>
+                        <form onSubmit={handleEditSubmit} className="flex flex-col gap-4">
+                            <input
+                                type="number"
+                                name="newQuantity"
+                                value={editForm.newQuantity}
+                                onChange={handleEditInputChange}
+                                placeholder="New Quantity"
+                                className="px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300"
+                                required
+                            />
+                            <div className="flex justify-between">
+                                <button
+                                    type="submit"
+                                    className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
+                                >
+                                    Submit
+                                </button>
+                                <button
+                                    type="button"
+                                    className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
+                                    onClick={() => setEditModalVisible(false)}
+                                >
+                                    Cancel
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            )}
+
+
             {/* Order Table */}
             <div className="mt-6">
               <table className="w-full table-auto border-collapse border border-gray-700 text-gray-300">
@@ -224,11 +258,7 @@ const OrdersPage = () => {
               </table>
             </div>
           </div>
-      ) : (
-          <div className="p-6 bg-gray-900 min-h-screen text-gray-300 flex items-center justify-center">
-            <h1 className="text-3xl font-bold text-white">Unauthorized Access</h1>
-          </div>
-      )
+
   );
 
 };

@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import {useNavigate, redirect} from "react-router-dom";
-import OrderBook from "./OrderBook";
-import OrdersPage from "../pages/OrdersPage";
+import {useNavigate} from "react-router-dom";
+import {toast} from "react-toastify";
+
 
 const Login = ({ onClose }) => {
     const [formData, setFormData] = useState({
         email: '',
         password: ''
     });
-    const navigate = useNavigate();
+
     const { email, password } = formData;
 
     const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,10 +21,14 @@ const Login = ({ onClose }) => {
             console.log(res);
             localStorage.setItem('token', res.data.token);
             localStorage.setItem('name', res.data.user.name);
-            navigate('/');
+            toast.success(`Hi ${res.data.user.name}You are successfully logged in`);
+
+            onClose();
 
         } catch (err) {
             console.error(err.response?.data || 'An error occurred');
+            toast.error(err.response?.data?.message || 'An error occurred');
+
         }
     };
 

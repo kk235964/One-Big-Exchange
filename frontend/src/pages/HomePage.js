@@ -25,15 +25,15 @@ const HomePage = ({ name, isAuthenticated }) => {
     }, []);
 
     // Handle Order button click and check for token
-    const handleOrderClick = () => {
-        const token = localStorage.getItem('token');
-        if (!token) {
-            toast.error("You need to be logged in to place an order!");  // Show toast if no token is found
-        } else {
-            // Proceed with order logic, like redirecting to the order page
-            console.log("Token exists, proceed with order!");
-        }
-    };
+    // const handleOrderClick = () => {
+    //     const token = localStorage.getItem('token');
+    //     if (!token) {
+    //         toast.error("You need to be logged in to place an order!");  // Show toast if no token is found
+    //     } else {
+    //         // Proceed with order logic, like redirecting to the order page
+    //         console.log("Token exists, proceed with order!");
+    //     }
+    // };
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white">

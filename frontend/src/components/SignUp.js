@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import 'react-toastify/dist/ReactToastify.css';
+import {toast} from "react-toastify";
+import { useNavigate} from "react-router-dom";  // Import toastify styles
 
 const Signup = ({ onClose }) => {
     const [formData, setFormData] = useState({
@@ -8,17 +11,22 @@ const Signup = ({ onClose }) => {
         password: ''
     });
 
+
     const { username, email, password } = formData;
 
     const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
-
+    const navigate = useNavigate();
     const onSubmit = async e => {
         e.preventDefault();
         try {
             const res = await axios.post('http://localhost:5000/api/auth/register', formData);
             console.log(res.data);
+            //toastify success alert
+            toast.success('Your account is successfully created, Please login');
+            onClose();
         } catch (err) {
             console.error(err.response?.data || 'An error occurred');
+            toast.error(err.response?.data?.message || 'An error occurred');
         }
     };
 
